@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/MarcMechi98/fullstack-nasa-project/issues"
   },
-  "homepage": "https://github.com/MarcMechi98/fullstack-nasa-project#readme"
+  "homepage": "https://github.com/MarcMechi98/fullstack-nasa-project#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
 }
