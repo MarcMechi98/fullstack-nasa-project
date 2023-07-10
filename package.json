@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/MarcMechi98/fullstack-nasa-project#readme",
   "dependencies": {
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.3.2",
     "morgan": "^1.10.0"
   }
 }
