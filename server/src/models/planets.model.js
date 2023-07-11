@@ -10,9 +10,6 @@ function isHabitablePlanet(planet) {
     && planet['koi_prad'] < 1.6;
 }
 
-// Função que garante que os dados dos planetas já estejam
-// preparados pra uma futura http request por eles
-
 function loadPlanetsData() {
   return new Promise((resolve, reject) => {
     fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'kepler_data.csv'))
@@ -26,7 +23,7 @@ function loadPlanetsData() {
         }
       })
       .on('error', (err) => {
-        console.log(err);
+        console.error(err);
         reject(err);
       })
       .on('end', () => {
