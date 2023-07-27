@@ -54,6 +54,7 @@ async function populateLaunches() {
   for (const launchDoc of launchDocs) {
     const payloads = launchDoc.payloads;
     const customers = payloads.flatMap((payload) => {
+      console.log('PAYLOAD', payload.customers)
       return payload.customers
     })
 
@@ -64,10 +65,9 @@ async function populateLaunches() {
       launchDate: launchDoc['date_local'],
       upcoming: launchDoc.upcoming,
       success: launchDoc.success,
-      customer: customers
+      customers: customers
     }
-
-    console.log(`${launch.flightNumber} ${launch.mission}`)
+    console.log(`${launch.flightNumber}: ${launch.mission}, ${launch.rocket}, ${launch.customers}`)
 
     await saveOneLaunch(launch);
   }
