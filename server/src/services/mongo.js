@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
-const MONGO_URL = 'mongodb+srv://marcedumechi:obFbfvD4vaJWr9aM@cluster0.yyjiygm.mongodb.net/nasa?retryWrites=true&w=majority';
+require('dotenv').config();
+const MONGO_URL = process.env.MONGO_URL;
+
+if (!MONGO_URL) {
+  console.error('MONGO_URL is not defined in the .env file.');
+  process.exit(1);
+}
 
 mongoose.connection.once('open', () => {
   console.log('MongoDB connection has been established!')

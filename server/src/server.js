@@ -1,6 +1,8 @@
 const http = require('http');
 const cluster = require('cluster')
 
+require('dotenv').config();
+
 const app = require('./app');
 const { mongoConnect } = require('./services/mongo');
 const { loadPlanetsData } = require('./models/planets.model');
