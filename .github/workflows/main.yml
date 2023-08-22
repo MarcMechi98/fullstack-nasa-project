@@ -28,4 +28,4 @@ jobs:
         working-directory: ./client
       - run: npm run build 
         working-directory: ./client
-      - run: npm test --prefix server
+      - run: npm test
